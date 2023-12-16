@@ -83,9 +83,9 @@ var addArrows = (a, b) => a + b;
 // ======The "THIS" KEYWORD =======
 console.log(this);
 
-const calage = function (birthYear) {
+const calAge = function (birthYear) {
   console.log(2037 - birthYear);
   console.log(this);
 };
 
-calage(1991);
+calAge(1991);
