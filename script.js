@@ -80,7 +80,7 @@ var addArrows = (a, b) => a + b;
 // console.log(x === window.x);
 // console.log(y === window.y);
 
-// ======The THIS KEYWORD =======
+// ======The "THIS" KEYWORD =======
 console.log(this);
 
 const calage = function (birthYear) {
