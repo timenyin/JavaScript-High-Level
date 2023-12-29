@@ -152,7 +152,7 @@ harmony.calcAge();
 */
 
 // Arguments "THIS keywords"
-
+/*
 var addExpr = function (a, b) {
   console.log(arguments);
   return a + b;
@@ -167,3 +167,108 @@ var addArrow = (a, b) => {
 addArrow(2, 3, 5);
 
 // PRIMITIVES VS OBJECTS (PRIMITIVE VS REFERENCE TYPES)
+// console.log(this);
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  // console.log(this);
+};
+
+calcAge(1993);
+
+// the arrow function method
+const calcAgeArrow = (birthYear) => {
+  console.log(2037 - birthYear);
+  // console.log(this);
+};
+
+calcAgeArrow(1999);
+
+// ======use in Method =======
+const harmony = {
+  year: 1991,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2032 - this.year);
+  },
+};
+
+harmony.calcAge();
+console.log(harmony.year);
+
+const preciousX = {
+  year: 1995,
+};
+
+preciousX.calcAge = harmony.calcAge;
+preciousX.calcAge();
+
+// const f = harmony.calcAge;
+// f();
+
+*/
+
+// ======= REGULAR FUNCTION VS ARROW FUNCTION ========
+/*
+const harmony = {
+  firstName: "Kunu",
+  year: 1991,
+  calAge: function () {
+    console.log(this);
+    console.log(2024 - this.year);
+
+    const self = this; // previous ES^6 solution 1
+
+    const isMillennial = function () {
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+
+    isMillennial();
+
+    // Using Arrow Function for  ES^6 solution 2
+    // ** Note *** arrow function uses the 'this' keyword form is parent scoop
+
+    const isMillennial2 = () => {
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+    isMillennial2();
+  },
+
+  // === not using the arrow function to call the 'this' keyword
+  greet: () => console.log(`hey ${this.firstName}`),
+};
+
+harmony.greet();
+harmony.calAge();
+
+// Arguments "THIS keywords"
+var addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 6, 9, 10);
+var addArrow = (a, b) => {
+  //console.log(arguments); not that important in javascript
+  return a + b;
+};
+
+addArrow(2, 3, 5);
+
+*/
+
+// ======== PRIMITIVE VS OBJ (PRIMITIVE VS REFERENCE TYPES) =======
+let age = 30;
+let oldAge = age;
+age = 31;
+
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: "harmony",
+  age: 30,
+};
+
+const friend = me;
+friend.age = 34;
+console.log(me.age, friend.age);
