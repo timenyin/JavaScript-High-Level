@@ -257,18 +257,50 @@ addArrow(2, 3, 5);
 */
 
 // ======== PRIMITIVE VS OBJ (PRIMITIVE VS REFERENCE TYPES) =======
-let age = 30;
-let oldAge = age;
-age = 31;
+// let age = 30;
+// let oldAge = age;
+// age = 31;
 
-console.log(age);
-console.log(oldAge);
+// console.log(age);
+// console.log(oldAge);
 
-const me = {
-  name: "harmony",
-  age: 30,
+// const me = {
+//   name: "harmony",
+//   age: 30,
+// };
+
+// const friend = me;
+// friend.age = 34; // source of confusion
+// console.log(me.age, friend.age);
+
+let lastName = "harmony";
+let oldLastName = lastName;
+lastName = "Timenyin";
+console.log(lastName, oldLastName);
+
+const precious = {
+  firstName: "Kunu",
+  lastName: "orishebumin",
+  age: 26,
 };
 
-const friend = me;
-friend.age = 34;
-console.log(me.age, friend.age);
+const marriedPrecious = precious;
+marriedPrecious.lastName = "Emmanuel";
+console.log("Before Marriage:", precious);
+console.log("After Marriage", marriedPrecious);
+
+// ======== Copy Object
+const precious2 = {
+  firstName: "Kunu",
+  lastName: "orishebumin",
+  age: 26,
+  family: ["ot", 'bob"s'],
+};
+
+// to copy new object
+const preciousCopy = Object.assign({}, precious2);
+preciousCopy.lastName = "Emmanuel";
+console.log("Before Marriage:", precious2);
+console.log("After Marriage", preciousCopy);
+
+preciousCopy.family.push("sherry");
